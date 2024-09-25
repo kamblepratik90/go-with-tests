@@ -20,3 +20,6 @@ PASS
 ok      integerrs/03iterations  1.524s
 
 ----- 102.6 ns/op - means is our function takes on average 102 nanoseconds to run (on my computer). To test this it ran it 10572080 times.
+
+
+* go test -cover       // for test coverage
