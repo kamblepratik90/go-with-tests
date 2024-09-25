@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 // func TestHello(t *testing.T) {
 // 	got := Hello()
@@ -23,7 +25,7 @@ import "testing"
 func TestHello3(t *testing.T) {
 	t.Run("test simple hello with msg", func(t *testing.T) {
 
-		got := Hello("Batman")
+		got := Hello("Batman", "")
 		want := "Hello, Batman"
 
 		// if got != want {
@@ -34,12 +36,25 @@ func TestHello3(t *testing.T) {
 
 	t.Run("test hello world without msg", func(t *testing.T) {
 
-		got := Hello("")
+		got := Hello("", "")
 		want := "Hello, World"
 
 		// if got != want {
 		// 	t.Errorf("got %q and want %q", got, want)
 		// }
+		assertCorrectMessage(t, got, want)
+	})
+
+	// refactor 02
+	t.Run("in Spanish", func(t *testing.T) {
+		got := Hello("Elodie", "Spanish")
+		want := "Hola, Elodie"
+		assertCorrectMessage(t, got, want)
+	})
+
+	t.Run("in French", func(t *testing.T) {
+		got := Hello("Elodie", "French")
+		want := "Bonjour, Elodie"
 		assertCorrectMessage(t, got, want)
 	})
 }
