@@ -6,8 +6,15 @@ import "fmt"
 // 	return "Hello World"
 // }
 
+const englishHelloPrefix = "Hello, "
+
 func Hello(msg string) string {
-	return "Hello " + msg
+
+	if msg == "" {
+		return englishHelloPrefix + "World"
+		// msg = "World"
+	}
+	return englishHelloPrefix + msg
 }
 
 func main() {
