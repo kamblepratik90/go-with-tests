@@ -1,9 +1,18 @@
 package integers
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Add(x, y int) int {
 	return x + y
+}
+
+func ExampleAdd() {
+	sum := Add(1, 5)
+	fmt.Println(sum)
+	// Output: 6
 }
 
 func TestAdd(t *testing.T) {
